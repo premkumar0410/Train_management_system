@@ -44,11 +44,12 @@ CREATE TABLE TTS_Schedule (
     available_seats INT
 );
 
-drop table tts_schedule;
+
+drop table tts_payment;
 
 CREATE TABLE TTS_Payment (
     payment_id INT primary key,
-    trans_id INT references tts_train(train_no),
+    trans_id INT references tts_history(trans_id),
     customer_id INT references tts_customer(customer_id),
     payment_mode VARCHAR(50),
     payment_status VARCHAR(50),
